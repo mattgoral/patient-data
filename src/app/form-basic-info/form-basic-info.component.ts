@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PatientDataService } from '../patient-data.service';
 
 @Component({
   selector: 'app-form-basic-info',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormBasicInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public patientDataService: PatientDataService) {}
+
+  patientData = this.patientDataService.patientData;
+
+  setData(){
+    this.patientDataService.updateData(this.patientData);
+  }
 
   ngOnInit() {
   }

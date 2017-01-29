@@ -8,13 +8,6 @@ import { PatientDataService } from '../patient-data.service';
 })
 export class PatientDataFormComponent implements OnInit {
 
-  constructor(public patientDataService: PatientDataService) {
-  	this.patientDataService = patientDataService;
-  }
-
-  name = this.patientDataService.patientData.name;
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
