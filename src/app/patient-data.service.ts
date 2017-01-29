@@ -18,5 +18,10 @@ export class PatientDataService {
 
   private patientData = new BehaviorSubject(this.patientDataTemplate);
   patientData$ = this.patientData.asObservable();
+
+  submitPatientData() {
+    console.log('http post');
+    console.log(this.patientData.value);
+  }
   
 }

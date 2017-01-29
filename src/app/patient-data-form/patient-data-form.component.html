@@ -2,18 +2,19 @@
   <ngb-tab title="Basic Info" id="tab-basic-info" class="btn btn-secondary">
     <template ngbTabContent>
       <app-form-basic-info></app-form-basic-info>
-      <button class="btn btn-success next-button" (click)="t.select('tab-medical-history')">next</button>
+      <button class="btn btn-success next-button" (click)="t.select('tab-medical-history')">Next</button>
     </template>
   </ngb-tab>
    <ngb-tab title="Medical History" id="tab-medical-history">
     <template ngbTabContent>
     	<app-form-medical-history></app-form-medical-history>
-    	<button class="btn btn-success next-button" (click)="t.select('tab-consent')">next</button>
+    	<button class="btn btn-success next-button" (click)="t.select('tab-consent')">Next</button>
     </template>
   </ngb-tab>
   <ngb-tab title="Consent" id="tab-consent">
     <template ngbTabContent>
       <p>consent</p>
+      <button class="btn btn-success next-button" (click)="submitForm()">Submit</button>
     </template>
   </ngb-tab>
 </ngb-tabset>
