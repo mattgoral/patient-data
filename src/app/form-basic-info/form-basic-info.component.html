@@ -1,3 +1,15 @@
 <h2>Basic Info</h2>
 <input [(ngModel)]="patientData.basicInfo.name">
-<button (click)="setData()">Save and Continue</button>
+<button class="btn btn-primary" (click)="setData()">Save and Continue</button>
+
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd"
+             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-addon" (click)="d.toggle()" >
+        <i class="fa fa-calendar"></i>
+      </div>
+    </div>
+  </div>
+</form>
