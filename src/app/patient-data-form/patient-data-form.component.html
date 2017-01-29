@@ -1,3 +1,19 @@
-<h1>My Patient Data</h1>
-
-<app-form-basic-info></app-form-basic-info>
+<ngb-tabset #t="ngbTabset" id="patient-data-pills" type="pills">
+  <ngb-tab title="Basic Info" id="tab-basic-info" class="btn btn-secondary">
+    <template ngbTabContent>
+      <app-form-basic-info></app-form-basic-info>
+      <button class="btn btn-success next-button" (click)="t.select('tab-medical-history')">next</button>
+    </template>
+  </ngb-tab>
+   <ngb-tab title="Medical History" id="tab-medical-history">
+    <template ngbTabContent>
+    	<app-form-medical-history></app-form-medical-history>
+    	<button class="btn btn-success next-button" (click)="t.select('tab-consent')">next</button>
+    </template>
+  </ngb-tab>
+  <ngb-tab title="Consent" id="tab-consent">
+    <template ngbTabContent>
+      <p>consent</p>
+    </template>
+  </ngb-tab>
+</ngb-tabset>

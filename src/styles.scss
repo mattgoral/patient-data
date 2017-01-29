@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+$nav-height: 60px;
+$nav-padding: 10px;
+
+#main-nav, .next-button {
+	position: fixed;
+}
+
+#main-nav {
+	background: #ddd;
+	height: $nav-height;
+	width: 100%;
+	.nav-title {
+		font-size: 30px;
+		line-height: $nav-height;
+		padding: 0 $nav-padding;
+	}
+}
+
+#patient-data-pills {
+	.nav.nav-pills {
+		background: #eee;
+		padding: $nav-padding;
+		position: fixed;
+		top: $nav-height;
+		width: 100%;
+	}
+	.nav.nav-pills::before {
+		content: "My Patient Data";
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 40px;
+		margin-right: 20px;
+	}
+}
+
+.next-button {
+	right: $nav-padding;
+	top: $nav-height + $nav-padding;
+}
+
+.form-container {
+	position: relative;
+	top: $nav-height * 2;
+}

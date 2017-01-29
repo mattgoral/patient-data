@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { PatientDataService } from './patient-data.service';
 import { PatientDataFormComponent } from './patient-data-form/patient-data-form.component';
 import { FormBasicInfoComponent } from './form-basic-info/form-basic-info.component';
+import { FormMedicalHistoryComponent } from './form-medical-history/form-medical-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PatientDataFormComponent,
-    FormBasicInfoComponent
+    FormBasicInfoComponent,
+    FormMedicalHistoryComponent
   ],
   imports: [
     BrowserModule,
