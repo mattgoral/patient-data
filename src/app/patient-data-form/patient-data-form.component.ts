@@ -8,6 +8,15 @@ import { PatientDataService } from '../patient-data.service';
 })
 export class PatientDataFormComponent implements OnInit {
 
+
+  // TODO: This is only subscribed for debugging.  Remove it
+  patientData = {};
+  constructor(public patientDataService: PatientDataService) {
+  	this.patientDataService.patientData$.subscribe((patientData) => {
+      this.patientData = patientData;
+    });
+  }
+
   ngOnInit() {}
 
 }

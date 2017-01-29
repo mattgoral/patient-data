@@ -44,3 +44,12 @@ $nav-padding: 10px;
 	position: relative;
 	top: $nav-height * 2;
 }
+
+.debug-container {
+	padding: 10px;
+	position: fixed;
+	right: 0px;
+	top: $nav-height * 2;
+	width: 300px;
+	z-index: 100;
+}

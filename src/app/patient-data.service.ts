@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class PatientDataService {
 
-  patientData = {
-  	basicInfo: {
-  		name: '',
-  		dateOfBirth: ''
-
-  	},
-  	allergies: ''
+  patientDataTemplate = {
+    basicInfo: {
+      name: 'Matt',
+      dateOfBirth: ''
+    },
+    medicalHistory: {
+      allergies: [
+        'tylenol'
+      ]
+    }
   };
 
-  updateData(data) {
-  	this.patientData = data;
-  	console.log('update patient data!');
-  	console.log(this.patientData);
-  }
-
+  private patientData = new BehaviorSubject(this.patientDataTemplate);
+  patientData$ = this.patientData.asObservable();
+  
 }

@@ -7,16 +7,13 @@ import { PatientDataService } from '../patient-data.service';
   styleUrls: ['./form-basic-info.component.scss']
 })
 export class FormBasicInfoComponent implements OnInit {
-
-  constructor(public patientDataService: PatientDataService) {}
-
-  patientData = this.patientDataService.patientData;
-
-  setData(){
-    this.patientDataService.updateData(this.patientData);
+  patientData = {};
+  constructor(public patientDataService: PatientDataService) {
+  	this.patientDataService.patientData$.subscribe((patientData) => {
+      this.patientData = patientData;
+    });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
