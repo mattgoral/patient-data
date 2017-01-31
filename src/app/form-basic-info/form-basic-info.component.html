@@ -1,14 +1,82 @@
-<div class="container-fluid form-container">
-<input [(ngModel)]="patientData.basicInfo.name">
-<form class="form-inline">
-  <div class="form-group">
+<div class="container form-container">
+<div class="row">
+	<div class="col-sm-12">
+		<h5 class="input-label">Name</h5>
+	</div>
+  <div class="form-group col-sm-6">
+    <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="patientData.basicInfo.name.firstName">
+  </div>
+  <div class="form-group col-sm-6">
+    <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="patientData.basicInfo.name.lastName">
+  </div>
+
+  <div class="form-group col-sm-6">
+  	<h5 class="input-label">Date of Birth</h5>
     <div class="input-group">
-      <input class="form-control" placeholder="yyyy-mm-dd"
-             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+      <input class="form-control" placeholder="YYYY-MM-DD" [(ngModel)]="patientData.basicInfo.dateOfBirth" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
       <div class="input-group-addon" (click)="d.toggle()" >
         <i class="fa fa-calendar"></i>
       </div>
     </div>
   </div>
-</form>
+
+  <div class="form-group col-sm-6">
+  	<h5 class="input-label">Sex</h5>
+  	<label class="radio-inline">
+		  <input type="radio" [(ngModel)]="patientData.basicInfo.sex" value="male">Male
+		</label>
+		<label class="radio-inline">
+		  <input type="radio" [(ngModel)]="patientData.basicInfo.sex" value="female">Female
+		</label>
+  </div>
+
+  <div class="col-sm-12">
+		<h5 class="input-label">Address</h5>
+	</div>
+	<div class="form-group col-sm-10">
+    <input type="text" class="form-control" placeholder="Street" [(ngModel)]="patientData.basicInfo.address.street">
+  </div>
+  <div class="form-group col-sm-2">
+    <input type="text" class="form-control" placeholder="Apt/Unit" [(ngModel)]="patientData.basicInfo.address.apt">
+  </div>
+  <div class="form-group col-sm-6">
+    <input type="text" class="form-control" placeholder="City" [(ngModel)]="patientData.basicInfo.address.city">
+  </div>
+  <div class="form-group col-sm-3">
+    <input type="text" class="form-control" placeholder="State" [(ngModel)]="patientData.basicInfo.address.state">
+  </div>
+  <div class="form-group col-sm-3">
+    <input type="text" class="form-control" placeholder="Zip" [(ngModel)]="patientData.basicInfo.address.zip">
+  </div>
+
+  <div class="form-group col-sm-6">
+  	<h5 class="input-label">Email Address</h5>
+    <input type="email" class="form-control" placeholder="me@example.com" [(ngModel)]="patientData.basicInfo.email">
+  </div>
+
+  <div class="form-group col-sm-6">
+  	<h5 class="input-label">Phone Number</h5>
+    <input type="tel" class="form-control" placeholder="(123) 456-7890" [(ngModel)]="patientData.basicInfo.phone">
+  </div>
+
+
+
+  <div class="col-sm-12">
+		<h5 class="input-label">Emergency Contact</h5>
+	</div>
+  <div class="form-group col-sm-4">
+    <input type="text" class="form-control" placeholder="Name" [(ngModel)]="patientData.basicInfo.emergency.name">
+  </div>
+  <div class="form-group col-sm-4">
+    <input type="text" class="form-control" placeholder="Relation" [(ngModel)]="patientData.basicInfo.emergency.relation">
+  </div>
+  <div class="form-group col-sm-4">
+    <input type="tel" class="form-control" placeholder="Phone Number" [(ngModel)]="patientData.basicInfo.emergency.contact">
+  </div>
+
+</div>
+
+	  
+
+
 </div>

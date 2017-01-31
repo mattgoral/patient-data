@@ -5,6 +5,7 @@ $nav-padding: 10px;
 
 #main-nav, .next-button {
 	position: fixed;
+	z-index: 10;
 }
 
 #main-nav {
@@ -25,6 +26,7 @@ $nav-padding: 10px;
 		position: fixed;
 		top: $nav-height;
 		width: 100%;
+		z-index: 10;
 	}
 	.nav.nav-pills::before {
 		content: "My Patient Data";
@@ -42,7 +44,18 @@ $nav-padding: 10px;
 
 .form-container {
 	position: relative;
-	top: $nav-height * 2;
+	top: $nav-height * 2.5;
+}
+
+.input-label {
+	margin-top: 30px;
+}
+
+.radio-inline {
+	margin-right: 15px;
+	input {
+		margin-right: 10px;
+	}
 }
 
 .debug-container {

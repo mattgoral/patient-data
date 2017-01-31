@@ -6,12 +6,34 @@ export class PatientDataService {
 
   patientDataTemplate = {
     basicInfo: {
-      name: 'Matt',
-      dateOfBirth: ''
+      name: {
+        firstName: '',
+        lastName: ''
+      },
+      dateOfBirth: '',
+      sex: '',
+      address: {
+        street: '',
+        apt: '',
+        city: '',
+        state: '',
+        zip: ''
+      },
+      phone: '',
+      email: '',
+      emergency: {
+        name: '',
+        relation: '',
+        contact: ''
+      }
     },
     medicalHistory: {
-      allergies: [
-        'tylenol'
+      medications: [
+        {
+          name: '',
+          dose: '',
+          frequency: ''
+        }
       ]
     }
   };
