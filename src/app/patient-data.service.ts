@@ -30,7 +30,7 @@ export class PatientDataService {
     medicalHistory: {
       medications: [
         {
-          name: '',
+          name: 'advil',
           dose: '',
           frequency: ''
         }
@@ -40,6 +40,15 @@ export class PatientDataService {
 
   private patientData = new BehaviorSubject(this.patientDataTemplate);
   patientData$ = this.patientData.asObservable();
+
+  addMedication() {
+    console.log('add med service');
+    this.patientData.value.medicalHistory.medications.push({name:'',dose:'',frequency:''});
+  }
+
+  removeMedication(index) {
+    this.patientData.value.medicalHistory.medications.splice(index, 1);
+  }
 
   submitPatientData() {
     console.log('http post');
