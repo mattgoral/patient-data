@@ -101,7 +101,8 @@ export class PatientDataService {
           frequency: ''
         }
       ]
-    }
+    },
+    consent: false
   };
 
   private patientData = new BehaviorSubject(this.patientDataTemplate);

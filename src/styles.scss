@@ -58,6 +58,12 @@ $nav-padding: 10px;
 	}
 }
 
+h5 input {
+	position: relative;
+    margin-right: 5px;
+    top: -3px;
+}
+
 .add-button {
 	margin-bottom: 20px;
 }
@@ -70,4 +76,6 @@ $nav-padding: 10px;
 	top: $nav-height * 2;
 	width: 200px;
 	z-index: 100;
+
+	display: none;
 }
