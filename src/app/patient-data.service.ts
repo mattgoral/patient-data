@@ -28,9 +28,16 @@ export class PatientDataService {
       }
     },
     medicalHistory: {
+      complaints: '',
+      conditions: [
+        {
+          condition: '',
+          date: ''
+        }
+      ],
       medications: [
         {
-          name: 'advil',
+          name: '',
           dose: '',
           frequency: ''
         }
@@ -42,12 +49,19 @@ export class PatientDataService {
   patientData$ = this.patientData.asObservable();
 
   addMedication() {
-    console.log('add med service');
     this.patientData.value.medicalHistory.medications.push({name:'',dose:'',frequency:''});
   }
 
   removeMedication(index) {
     this.patientData.value.medicalHistory.medications.splice(index, 1);
+  }
+
+  addCondition() {
+    this.patientData.value.medicalHistory.conditions.push({condition:'',date:''});
+  }
+
+  removeCondition(index) {
+    this.patientData.value.medicalHistory.conditions.splice(index, 1);
   }
 
   submitPatientData() {
