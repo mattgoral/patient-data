@@ -48,7 +48,7 @@ $nav-padding: 10px;
 }
 
 .input-label {
-	margin-top: 30px;
+	margin-top: 40px;
 }
 
 .radio-inline {
@@ -58,11 +58,16 @@ $nav-padding: 10px;
 	}
 }
 
+.add-button {
+	margin-bottom: 20px;
+}
+
 .debug-container {
+	font-size: 10px;
 	padding: 10px;
 	position: fixed;
 	right: 0px;
 	top: $nav-height * 2;
-	width: 300px;
+	width: 200px;
 	z-index: 100;
 }

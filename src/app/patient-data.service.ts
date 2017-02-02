@@ -35,6 +35,56 @@ export class PatientDataService {
           date: ''
         }
       ],
+      familyHistory: [
+        {
+          disease: 'Hypertension',
+          hasHistory: false
+        },
+        {
+          disease: 'Diabetes',
+          hasHistory: false
+        },
+        {
+          disease: 'High Cholesterol',
+          hasHistory: false
+        },
+        {
+          disease: 'Heart Disease',
+          hasHistory: false
+        },
+        {
+          disease: 'Migranes',
+          hasHistory: false
+        },
+        {
+          disease: 'Seizures',
+          hasHistory: false
+        },
+        {
+          disease: 'Muscular Dystrophy',
+          hasHistory: false
+        },
+        {
+          disease: 'Strokes',
+          hasHistory: false
+        },
+        {
+          disease: "Parkinson's Disease",
+          hasHistory: false
+        },
+        {
+          disease: "Alzheimer's Disease",
+          hasHistory: false
+        },
+        {
+          disease: 'Neruopathy',
+          hasHistory: false
+        },
+        {
+          disease: 'Multiple Sclerosis',
+          hasHistory: false
+        }
+      ],
       medications: [
         {
           name: '',

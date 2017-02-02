@@ -38,10 +38,26 @@
 		</div>
 	
 		<div class="col-sm-12">
-	  	<button class="btn btn-success" (click)="patientDataService.addCondition()">
+	  	<button class="btn btn-success add-button" (click)="patientDataService.addCondition()">
 	  		<i class="fa fa-plus-circle"></i> Add Condition
 	  	</button>
 	  </div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<h5 class="input-label">Family History</h5>
+			<p>Please indicate if you have any family history of the following.</p>
+		</div>
+
+		<div class="col-sm-3" *ngFor="let history of patientData.medicalHistory.familyHistory">
+			<div class="checkbox">
+				<label>
+	        <input type="checkbox" name="isActive"  [(ngModel)]="history.hasHistory">
+	        {{ history.disease}}
+	    	</label>
+	    	</div>
+		</div>
 	</div>
 
 
@@ -70,7 +86,7 @@
 			</div>
 	  </div>
 	  <div class="col-sm-12">
-	  	<button class="btn btn-success" (click)="patientDataService.addMedication()">
+	  	<button class="btn btn-success add-button" (click)="patientDataService.addMedication()">
 	  		<i class="fa fa-plus-circle"></i> Add Medication
 	  	</button>
 	  </div>
