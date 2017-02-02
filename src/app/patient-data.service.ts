@@ -1,8 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Http, Response, Headers } from '@angular/http';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import {Observable} from 'rxjs/Rx';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class PatientDataService {
+
+  constructor (private http: Http) {}
+
+  apiEndpoint = "http://www.mattgoral.com/patient-data";
 
   patientDataTemplate = {
     basicInfo: {
@@ -115,8 +124,15 @@ export class PatientDataService {
   }
 
   submitPatientData() {
-    console.log('http post');
-    console.log(this.patientData.value);
+    let requestBody = JSON.stringify(this.patientData.value);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+
+    return this.http.post(this.apiEndpoint, requestBody, headers)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log('Error because the endpoint is fake!');
+      });
   }
   
 }
