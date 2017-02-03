@@ -46,22 +46,6 @@
 
 	<div class="row">
 		<div class="col-sm-12">
-			<h5 class="input-label">Family History</h5>
-			<p>Please indicate if you have any family history of the following.</p>
-		</div>
-
-		<div class="col-sm-3" *ngFor="let history of patientData.medicalHistory.familyHistory">
-			<div class="checkbox">
-				<label>
-	        <input type="checkbox" name="isActive"  [(ngModel)]="history.hasHistory">
-	        {{ history.disease}}
-	    	</label>
-	    	</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-sm-12">
 			<h5 class="input-label">Medications</h5>
 			<p>Please list any medications you are currently taking.</p>
 		</div>
@@ -90,6 +74,50 @@
 	  		<i class="fa fa-plus-circle"></i> Add Medication
 	  	</button>
 	  </div>
-
 	</div>
+
+	<div class="row">
+		<div class="form-group col-sm-4">
+	  	<h5 class="input-label">Do you smoke?</h5>
+	  	<label class="radio-inline">
+			  <input type="radio" [(ngModel)]="patientData.medicalHistory.isSmoker" value="true" name="smoker">Yes
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" [(ngModel)]="patientData.medicalHistory.isSmoker" value="false" name="smoker">No
+			</label>
+	  </div>
+
+	  <div class="form-group col-sm-8">
+	  	<h5 class="input-label">How often do you exercise?</h5>
+	  	<label class="radio-inline">
+			  <input type="radio" [(ngModel)]="patientData.medicalHistory.exercise" value="daily" name="exercise">Daily
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" [(ngModel)]="patientData.medicalHistory.exercise" value="weekly" name="exercise">Weekly
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" [(ngModel)]="patientData.medicalHistory.exercise" value="monthly" name="exercise">Monthly
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" [(ngModel)]="patientData.medicalHistory.exercise" value="never" name="exercise">Never
+			</label>
+	  </div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<h5 class="input-label">Family History</h5>
+			<p>Please indicate if you have any family history of the following.</p>
+		</div>
+
+		<div class="col-sm-3" *ngFor="let history of patientData.medicalHistory.familyHistory">
+			<div class="checkbox">
+				<label>
+	        <input type="checkbox" name="isActive"  [(ngModel)]="history.hasHistory">
+	        {{ history.disease}}
+	    	</label>
+	    	</div>
+		</div>
+	</div>
+
 </div>

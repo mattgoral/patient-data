@@ -30,6 +30,18 @@
 			</label>
 	  </div>
 
+		<div class="col-sm-12">
+			<h5 class="input-label">Race</h5>
+		</div>
+		<div class="col-sm-3" *ngFor="let race of patientData.basicInfo.race">
+			<div class="checkbox">
+				<label>
+		    <input type="checkbox" name="isActive" [(ngModel)]="race.isRace">
+		    {{ race.race }}
+			</label>
+			</div>
+		</div>
+
 	  <div class="col-sm-12">
 			<h5 class="input-label">Address</h5>
 		</div>

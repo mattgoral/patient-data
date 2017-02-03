@@ -34,7 +34,25 @@ export class PatientDataService {
         name: '',
         relation: '',
         contact: ''
-      }
+      },
+      race: [
+        {
+          race: 'White',
+          isRace: false
+        },
+        {
+          race: 'Asian',
+          isRace: false
+        },
+        {
+          race: 'African American',
+          isRace: false
+        },
+        {
+          race: 'Native American',
+          isRace: false
+        }
+      ]
     },
     medicalHistory: {
       complaints: '',
@@ -44,6 +62,7 @@ export class PatientDataService {
           date: ''
         }
       ],
+      isSmoker: '',
       familyHistory: [
         {
           disease: 'Hypertension',
