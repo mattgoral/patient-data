@@ -63,6 +63,7 @@ export class PatientDataService {
         }
       ],
       isSmoker: '',
+      exercise: '',
       familyHistory: [
         {
           disease: 'Hypertension',
