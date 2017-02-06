@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PrettyJsonModule, SafeJsonPipe } from 'angular2-prettyjson';
+import { JsonPipe } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { PatientDataService } from './patient-data.service';
@@ -23,9 +25,13 @@ import { FormConsentComponent } from './form-consent/form-consent.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    PrettyJsonModule
   ],
-  providers: [PatientDataService],
+  providers: [
+    PatientDataService,
+    { provide: JsonPipe, useClass: SafeJsonPipe }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
