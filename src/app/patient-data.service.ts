@@ -11,7 +11,7 @@ export class PatientDataService {
 
   constructor (private http: Http) {}
 
-  apiEndpoint = "http://www.mattgoral.com/patient-data";
+  apiEndpoint = "https://www.mattgoral.com/patient-data";
 
   patientDataTemplate = {
     basicInfo: {
@@ -145,6 +145,9 @@ export class PatientDataService {
   }
 
   submitPatientData() {
+    console.log('patientData');
+    console.log(this.patientData.value);
+
     let requestBody = JSON.stringify(this.patientData.value);
     let headers = new Headers({ 'Content-Type': 'application/json' });
 
