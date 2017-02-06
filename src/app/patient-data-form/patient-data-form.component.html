@@ -1,4 +1,4 @@
-<ngb-tabset #t="ngbTabset" id="patient-data-pills" type="pills">
+<ngb-tabset #t="ngbTabset" id="patient-data-pills" type="pills" [hidden]="submitted">
   <ngb-tab title="Basic Info" id="tab-basic-info" class="btn btn-secondary">
     <template ngbTabContent>
       <app-form-basic-info></app-form-basic-info>
@@ -22,4 +22,11 @@
 <div class="debug-container">
 	<h5>Debug</h5>
 	{{ patientData | json}}
+</div>
+
+<div class="confirmation-message" [hidden]="!submitted">
+  <h1>Thank you!</h1>
+  <br/>
+  <p>JSON payload:</p>
+  {{ patientData | json}}
 </div>

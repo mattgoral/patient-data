@@ -9,6 +9,7 @@ import { PatientDataService } from '../patient-data.service';
 export class PatientDataFormComponent implements OnInit {
 
   patientData = {};
+  submitted = false;
   constructor(public patientDataService: PatientDataService) {
   	this.patientDataService.patientData$.subscribe((patientData) => {
       this.patientData = patientData;
@@ -17,6 +18,7 @@ export class PatientDataFormComponent implements OnInit {
 
   submitForm() {
     this.patientDataService.submitPatientData();
+    this.submitted = true;
   }
 
   ngOnInit() {}
